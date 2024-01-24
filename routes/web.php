@@ -22,8 +22,11 @@ use App\Http\Controllers\dashboardController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
-});
+    return view('admin');
+})->middleware('guest');
+Route::post('/', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/Change-password', [LoginController::class, 'changePassword'])->name('change_password');
 Route::view('/dashboard', 'dashboard');
 Route::view('/authors', 'author.index');
 Route::view('/categories', 'category.index');

@@ -348,6 +348,9 @@
                     <br>
                     <center>
                         <h1><strong>Library Management System</strong></h1>
+                        <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
                     </center>
                     <br>
 

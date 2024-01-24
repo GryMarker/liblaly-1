@@ -21,7 +21,7 @@
                             <th>Contact Number</th>
                             <th>Email</th>
                             <th>Permanent Address</th>
-                            <th>View</th>
+                           
                             <th>Edit</th>
                             <th>Delete</th>
                         </thead>
@@ -36,10 +36,7 @@
                                     <td>{{ $profile->email }}</td>
                                     <td>{{ $profile->address }}</td>
 
-                                    <td class="view">
-                                        <button data-sid='{{ $profile->id }}>'
-                                            class="btn btn-primary view-btn">View</button>
-                                    </td>
+                                 
                                     <td class="edit">
                                         <a href="{{ route('profile.edit', $profile) }}>" class="btn btn-success">Edit</a>
                                     </td>

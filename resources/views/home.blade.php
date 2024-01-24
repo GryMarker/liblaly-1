@@ -1,32 +1,23 @@
-@extends('layouts.guest')
-@section('content')
+@extends('layouts.app')
 
-    <div id="wrapper-admin">
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-4 col-md-4">
-                    <div class="logo border border-danger">
-                        <img src="{{ asset('images/library.png') }}" alt="">
-                    </div>
-                    <form class="yourform" action="{{ route('login') }}" method="post">
-                        @csrf
-                        <h3 class="heading">Admin Login</h3>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="username" class="form-control" value="{{ old('username') }}"
-                                required>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" class="form-control" value="" required>
-                        </div>
-                        <input type="submit" name="login" class="btn btn-danger" value="login" />
-                    </form>
-                    @error('username')
-                        <div class='alert alert-danger'>{{ $message }}</div>
-                    @enderror
+                    @endif
+
+                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

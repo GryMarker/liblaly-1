@@ -20,7 +20,6 @@
         <th>Book Name</th>
         <th>Category</th>
         <th>Author</th>
-        <th>Publisher</th>
         <th>Status</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -32,7 +31,7 @@
                 <td>{{ $book->name }}</td>
                 <td>{{ optional($book->category)->name }}</td>
                 <td>{{ optional($book->author)->name }}</td>
-                <td>{{ optional($book->publisher)->name }}</td>
+             
                 <td>
                     @if ($book->status == 'Y')
                         <span class='badge badge-success'>Available</span>
@@ -44,8 +43,8 @@
                     <a href="{{ route('book.edit', $book) }}" class="btn btn-success">Edit</a>
                 </td>
                 <td class="delete">
-                    <form action="{{ route('book.destroy', $book) }}" method="post" class="form-hidden">
-                        <!-- Your delete form content -->
+                    <form action="{{ route('book.destroy', $book) }}" method="post" class="btn btn-danger">Delete
+                       
                     </form>
                 </td>
             </tr>
