@@ -98,12 +98,12 @@ Route::post('/book/issueBooks', [BookIssueController::class, 'store']);
 // Route::post('/Change-password', [LoginController::class, 'changePassword'])->name('change_password');
 
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('change-password',[dashboardController::class,'change_password_view'])->name('change_password_view');
-//     Route::post('change-password',[dashboardController::class,'change_password'])->name('change_password');
-//     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+ Route::middleware('auth')->group(function () {
+     Route::get('change-password',[dashboardController::class,'change_password_view'])->name('change_password_view');
+    Route::post('change-password',[dashboardController::class,'change_password'])->name('change_password');
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
-// });
+ });
 
 Auth::routes();
 

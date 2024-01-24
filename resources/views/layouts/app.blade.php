@@ -348,11 +348,15 @@
                     <br>
                     <center>
                         <h1><strong>Library Management System</strong></h1>
+                        
                     </center>
+                    
                     <br>
+                    
 
 
                 </div>
+              
             </div>
         </div>
     </div> <!-- /HEADER -->
@@ -368,6 +372,26 @@
                         <li><a href="{{ url('/books') }}">Books</a></li>
                         <li><a href="{{ url('/profiles') }}">Profiles</a></li>
                         <li><a href="{{ url('/book_issued') }}">Book Issue</a></li>
+                        <li>
+                        <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Hi {{ auth()->user()->name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                           
+                            <a class="dropdown-item" href="#" onclick="document.getElementById('logoutForm').submit()">Log Out</a>
+                        </div>
+                        <form method="post" id="logoutForm" action="{{ route('logout') }}">
+                            @csrf
+                        </form>
+                        <li><form method="post" id="logoutForm" action="{{ route('logout') }}">
+                        <button class="btn btn-danger delete-author">Logout</button>
+                        @csrf
+                        </form></li>
+                    </div>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
