@@ -29,7 +29,7 @@
                         <tr>
                             <td class="id">{{ $book->id }}</td>
                             <td>{{ $book->name }}</td>
-                            <td>{{ $book->categories->name }}</td>
+                            <td>{{ $book->category->name }}</td>
                             <td>{{ optional($book->author)->name }}</td>
 
                             <td>
