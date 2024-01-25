@@ -22,6 +22,7 @@ class BookIssueController extends Controller
         return response(view('book.issueBooks', [
             'books' => Book_issue::Paginate(5)
         ]));
+        
     }
 
     /**
@@ -70,7 +71,7 @@ class BookIssueController extends Controller
     $book->status = 'N';
     $book->save();
 
-    return redirect()->route('book.issueBooks');
+    return redirect()->route('book.index');
 }
 
 

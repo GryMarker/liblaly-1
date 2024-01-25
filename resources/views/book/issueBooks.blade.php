@@ -25,9 +25,44 @@
                             <th>Delete</th>
                         </thead>
                         <tbody>
+                        @forelse ($books as $book)
+                                
+                                    <td>{{ $book->id }}</td>
+                                    <td>{{ $book->profile->name }}</td>
+                                    <td>{{ $book->book->name }}</td>
+                                    <td>{{ $book->profile->phone }}</td>
+                                    <td>{{ $book->profile->email }}</td>
+                                    <td>{{ $book->issue_date }}</td>
+                                    <td>{{ $book->return_date }}</td>
+                                    <td>
+                                        @if ($book->issue_status == 'Y')
+                                            <span class='badge badge-success'>Returned</span>
+                                        @else
+                                            <span class='badge badge-danger'>Issued</span>
+                                        @endif
+                                    </td>
+                                    <td class="edit">
+                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Edit</a>
+                                    </td>
+                                    <td class="delete">
+                                        <form action="{{ route('book_issue.destroy', $book) }}" method="post"
+                                            class="form-hidden">
+                                            <button class="btn btn-danger">Delete</button>
+                                            
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="10">No Books Issued</td>
+                                </tr>
+                            @endforelse
+</tbody>
 
                     </table>
-
+                   
                 </div>
             </div>
         </div>

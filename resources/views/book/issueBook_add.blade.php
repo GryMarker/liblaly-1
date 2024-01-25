@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                <form class="yourform" action="{{ route('book.issueBooks') }}" method="post" autocomplete="off">
+                <form class="yourform" action="{{ route('book_issue.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label>Student Name</label>

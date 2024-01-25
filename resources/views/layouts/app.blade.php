@@ -371,7 +371,7 @@
                         <li><a href="{{ url('/categories') }}">Categories</a></li>
                         <li><a href="{{ url('/books') }}">Books</a></li>
                         <li><a href="{{ url('/profiles') }}">Profiles</a></li>
-                        <li><a href="{{ url('/book_issued') }}">Book Issue</a></li>
+                        <li><a href="{{ url('/book_issue') }}">Book Issue</a></li>
                         <li>
                         <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
