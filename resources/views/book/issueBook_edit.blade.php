@@ -43,7 +43,7 @@
                                 </tr>
                                 <tr>
                                     <td>Returned On</td>
-                                    <td><b>{{ $book->return_day->format('d M, Y') }}</b></td>
+                                 
                                 </tr>
                             @else
                                 @if (date('Y-m-d') > $book->return_date->format('d-m-Y'))
@@ -56,7 +56,9 @@
                         </table>
                         @if ($book->issue_status == 'N')
                             <form action="{{ route('book_issue.update', $book->id) }}" method="post" autocomplete="off">
+
                                 @csrf
+                                @method('PATCH')
                                 <input type='submit' class='btn btn-danger' name='save' value='Return Book'>
                             </form>
                         @endif

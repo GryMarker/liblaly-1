@@ -72,6 +72,7 @@ Route::resource('book', BookController::class);
 
 Route::get('/book_issue', [BookIssueController::class, 'index'])->name('book_issued');
 Route::get('/book-issue/create', [BookIssueController::class, 'create'])->name('book_issue.create');
+Route::post('/book/update/{id}', [BookController::class, 'update'])->name('book.update');
 Route::get('/book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
 Route::post('/book-issue/update/{id}', [BookIssueController::class, 'update'])->name('book_issue.update');
 Route::post('/book-issue/delete/{id}', [BookIssueController::class, 'destroy'])->name('book_issue.destroy');

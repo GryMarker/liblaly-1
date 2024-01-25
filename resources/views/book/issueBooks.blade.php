@@ -21,7 +21,8 @@
                             <th>Email</th>
                             <th>Issue Date</th>
                             <th>Return Date</th>
-                            <th>Edit</th>
+                            <th>Status</th>
+                            <th>Return</th>
                             <th>Delete</th>
                         </thead>
                         <tbody>
@@ -42,7 +43,7 @@
                                         @endif
                                     </td>
                                     <td class="edit">
-                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Return</a>
                                     </td>
                                     <td class="delete">
                                         <form action="{{ route('book_issue.destroy', $book) }}" method="post"

@@ -40,7 +40,7 @@
                                 @endif
                             </td>
                             <td class="edit">
-                                <a href="{{ route('book.edit', $book) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ route('book.edit', $book->id) }}" class="btn btn-success">Edit</a>
                             </td>
                             <td class="delete">
                                 <form action="{{ route('book.destroy', $book) }}" method="post">

@@ -12,6 +12,7 @@
                     <form class="yourform" action="{{ route('book.update', $book->id) }}" method="post"
                         autocomplete="off">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label>Book Name</label>
                             <input type="text" class="form-control @error('name') isinvalid @enderror"
@@ -43,13 +44,13 @@
                         </div>
                         <div class="form-group">
                             <label>Author</label>
-                            <select class="form-control @error('author_id') isinvalid @enderror " name="author_id">
+                            <select class="form-control @error('auther_id') isinvalid @enderror " name="author_id">
                                 <option value="">Select Author</option>
-                                @foreach ($authors as $author)
-                                    @if ($author->id == $book->author_id)
-                                        <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                                @foreach ($authors as $auther)
+                                    @if ($auther->id == $book->auther_id)
+                                        <option value="{{ $auther->id }}" selected>{{ $auther->name }}</option>
                                     @else
-                                        <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                        <option value="{{ $auther->id }}">{{ $auther->name }}</option>
                                     @endif
                                 @endforeach
                             </select>
@@ -59,6 +60,7 @@
                                 </div>
                             @enderror
                         </div>
+                       
                         <input type="submit" name="save" class="btn btn-danger" value="Update" >
                     </form>
                 </div>
